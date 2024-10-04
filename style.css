@@ -72,3 +72,10 @@ footer {
     height: 3rem;
     margin-top: 2rem;
 }
+
+.grafico {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin: 20px 0; /* Espaço acima e abaixo do gráfico */
+}

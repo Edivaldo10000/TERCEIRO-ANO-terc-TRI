@@ -12,6 +12,16 @@ async function quantidadeUsuariosPorRede() {
     }];
 
     const layout = {
+        title: {
+            text: 'Distribuição de Usuários por Rede Social', // Título dinâmico
+            font: {
+                size: 20,
+                color: '#333' // Cor do texto
+            },
+            x: 0.5, // Centraliza horizontalmente
+            xanchor: 'center', // Ancla o título no centro
+            yanchor: 'top' // Posiciona o título no topo
+        },
         height: 400,
         width: 500
     };
