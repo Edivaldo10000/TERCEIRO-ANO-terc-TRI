@@ -1,12 +1,25 @@
-var data = [{
-    values: [19, 26, 55],
-    labels: ['Residential', 'Non-Residential', 'Utility'],
-    type: 'pie'
-  }];
-  
-  var layout = {
-    height: 400,
-    width: 500
-  };
-  
-  Plotly.newPlot('myDiv', data, layout);
+async function quantidadeUsuariosPorRede() {
+    const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/numero-usuarios.json';
+    const res = await fetch(url);
+    const dados = await res.json();
+    const nomeDasRedes = Object.keys(dados);
+    const quantidadeDeUsuarios = Object.values(dados);
+
+    const data = [{
+        values: quantidadeDeUsuarios,
+        labels: nomeDasRedes,
+        type: 'pie'
+    }];
+
+    const layout = {
+        height: 400,
+        width: 500
+    };
+
+    const grafico = document.createElement('div');
+    grafico.className = 'grafico';
+    document.getElementById('graficos-container').appendChild(grafico);
+    Plotly.newPlot(grafico, data, layout);
+}
+
+quantidadeUsuariosPorRede();
